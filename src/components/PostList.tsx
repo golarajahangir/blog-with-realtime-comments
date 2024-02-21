@@ -9,6 +9,7 @@ import {
   Center,
 } from '@chakra-ui/react';
 import apiClient from '../services/api-client';
+import { Link } from 'react-router-dom';
 
 interface Post {
   userId: number;
@@ -40,13 +41,22 @@ export const PostList = () => {
         >
           {posts &&
             posts.map((post) => (
-              <Card key={post.id} maxW='sm'>
-                <CardBody>
-                  <Stack mt='6' spacing='3'>
-                    <Heading size='md'>{post.title}</Heading>
-                    <Text>{post.body}</Text>
-                  </Stack>
-                </CardBody>
+              <Card
+                _hover={{
+                  transform: 'scale(1.03)',
+                  transition: 'transform .15s ease-in',
+                }}
+                key={post.id}
+                maxW='sm'
+              >
+                <Link to={`post/${post.id}`}>
+                  <CardBody>
+                    <Stack mt='6' spacing='3'>
+                      <Heading size='md'>{post.title}</Heading>
+                      <Text>{post.body}</Text>
+                    </Stack>
+                  </CardBody>
+                </Link>
               </Card>
             ))}
         </SimpleGrid>
