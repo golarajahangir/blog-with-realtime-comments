@@ -1,6 +1,11 @@
-import { Button } from '@chakra-ui/react';
+import { PostList } from './components/PostList';
+
 function App() {
-  return <Button colorScheme='blue'>Button</Button>;
+  return (
+    <>
+      <PostList />
+    </>
+  );
 }
 
 export default App;
