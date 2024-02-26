@@ -1,11 +1,7 @@
-import { HomePage } from './components/HomePage';
+import { PostList } from './components/PostList';
 
 function App() {
-  return (
-    <>
-      <HomePage />
-    </>
-  );
+  return <PostList />;
 }
 
 export default App;
